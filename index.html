@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .game-board {
+        display: flex;
+        justify-content: space-around;
+      }
+      .player-button-container {
+        display: flex;
+      }
+      .user-card {
+        text-align: center;
+      }
+    </style>
+    <h1>Rock-Paper-Scissors</h1>
+    <div class="game-board">
+      <div class="user-card">
+        <h3>Player</h3>
+        <div class="player-button-container">
+          <button name="rock">Rock 🪨</button>
+          <button name="paper">Paper 📃</button>
+          <button name="scissors">Scissors ✂️</button>
+        </div>
+      </div>
+      <div class="user-card">
+        <h3>Computer</h3>
+        <div class="player-button-container">
+          <p class="computer-results"></p>
+        </div>
+      </div>
+    </div>
+    <p class="round-results"></p>
+    <script src="index.js"></script>
+  </body>
+</html>
