@@ -14,19 +14,22 @@
       .game-board {
         display: flex;
         justify-content: space-around;
+        gap: 1rem;
       }
       .player-button-container {
         display: flex;
         justify-content: space-evenly;
-        margin-top: 2rem;
+        margin: 2rem;
       }
       .player-button-container > button {
         border: 0;
         background-color: transparent;
+        font-size: 1.3rem;
       }
       .user-card {
         text-align: center;
         width: 75%;
+        border-radius: 8px;
       }
       .hidden {
         display: none;
@@ -52,17 +55,41 @@
         right: 10px;
         position: absolute;
       }
+      .computer {
+        background-color: lightgray;
+      }
+      .player {
+        background-color: #3b5bdb;
+        color: #fff;
+      }
+      li > span {
+        font-weight: bold;
+      }
+      .final-result {
+        text-align: center;
+      }
+      p > span {
+        font-weight: bold;
+      }
+      ul {
+        list-style: none;
+      }
+      .player-points,
+      .computer-points {
+        font-size: 1.4rem;
+      }
     </style>
     <h1>Rock-Paper-Scissors</h1>
     <h2 class="title-round">Round: 1</h2>
+    <p><span>Objective:</span> First player to earn 5 points is the winner.</p>
     <div class="game-board">
       <div class="player user-card">
         <h3>Player</h3>
         <p class="player-points"></p>
         <div class="player-button-container">
-          <button class="rock" name="rock">🪨</button>
-          <button class="paper" name="paper">📃</button>
-          <button class="scissors" name="scissors">✂️</button>
+          <button class="rock" name="Rock">🪨</button>
+          <button class="paper" name="Paper">📃</button>
+          <button class="scissors" name="Scissors">✂️</button>
         </div>
       </div>
       <div class="computer user-card">
