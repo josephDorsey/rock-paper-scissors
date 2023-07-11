@@ -7,21 +7,47 @@
   </head>
   <body>
     <style>
+      h1,
+      .title-round {
+        text-align: center;
+      }
       .game-board {
         display: flex;
         justify-content: space-around;
       }
       .player-button-container {
         display: flex;
+        justify-content: space-evenly;
+        margin-top: 2rem;
       }
       .user-card {
         text-align: center;
+        width: 75%;
+      }
+      .hidden {
+        display: none;
+      }
+      .game-board-results {
+        margin: 0 auto;
+        width: 95%;
+      }
+      ul {
+        margin: 0 auto;
+      }
+      .container-outcomes {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        font-size: 1.3rem;
       }
     </style>
     <h1>Rock-Paper-Scissors</h1>
     <h2 class="title-round">Round: 1</h2>
     <div class="game-board">
-      <div class="user-card">
+      <div class="player user-card">
         <h3>Player</h3>
         <p class="player-points"></p>
         <div class="player-button-container">
@@ -29,18 +55,22 @@
           <button class="paper" name="paper">Paper 📃</button>
           <button class="scissors" name="scissors">Scissors ✂️</button>
         </div>
-        <p class="player-results"></p>
       </div>
-      <div class="user-card">
+      <div class="computer user-card">
         <h3>Computer</h3>
         <p class="computer-points"></p>
-        <div class="player-button-container">
-          <p class="computer-results"></p>
-        </div>
       </div>
     </div>
-    <h3 class="final-result"></h3>
-    <ul class="round-results"></ul>
+    <div class="container-outcomes">
+      <p class="player-results"></p>
+      <span>vs.</span>
+      <p class="computer-results"></p>
+    </div>
+    <div class="game-board-results">
+      <h3 class="final-result"></h3>
+      <ul class="round-results"></ul>
+    </div>
+
     <script src="index.js"></script>
   </body>
 </html>
