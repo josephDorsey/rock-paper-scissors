@@ -3,6 +3,7 @@
 const playerButtonContainer = document.querySelector(
   ".player-button-container"
 );
+const reset = document.querySelector(".reset");
 const results = document.querySelector(".round-results");
 const finalResult = document.querySelector(".final-result");
 const titleRound = document.querySelector(".title-round");
