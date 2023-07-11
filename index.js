@@ -21,30 +21,8 @@ const gameBoard = {
 };
 playerPoints.textContent = Number(gameBoard.playerScore);
 computerPoints.textContent = Number(gameBoard.computerScore);
-const computerOptions = ["rock", "paper", "scissors"];
-playerButtonContainer.addEventListener("click", (e) => {
-  if (gameBoard.playerScore < 5 && gameBoard.computerScore < 5) {
-    let html = `<li>Round ${gameBoard.round}: ${playRound(
-      e.target.name,
-      getComputerChoice(computerOptions)
-    )}</li>`;
-    gameBoard.round++;
-    results.insertAdjacentHTML("afterbegin", html);
-  }
-  if (gameBoard.playerScore === 5 || gameBoard.computerScore === 5) {
-    rock.disabled = true;
-    paper.disabled = true;
-    scissors.disabled = true;
-    if (gameBoard.playerScore === 5) {
-      finalResult.textContent = `GAMEOVER - You Win!!! 🏆`;
-    }
-    if (gameBoard.computerScore === 5) {
-      finalResult.textContent = `GAMEOVER - You Lose!!! 💥`;
-    }
-  }
-  titleRound.textContent = `Round: ${gameBoard.round}`;
-  console.log(gameBoard.round);
-});
+const computerOptions = ["Rock", "Paper", "Scissors"];
+
 function getComputerChoice(arr) {
   let randomChoice = Math.floor(Math.random() * 3);
   return arr[randomChoice];
@@ -57,35 +35,35 @@ function playRound(playerSelection, computerSelection) {
     return `Tie! You both picked ${playerSelection}`;
   }
   // Player Wins
-  if (playerSelection === "rock" && computerSelection === "scissors") {
+  if (playerSelection === "Rock" && computerSelection === "Scissors") {
     console.log(gameBoard.playerScore);
     gameBoard.playerScore++;
     playerPoints.textContent = gameBoard.playerScore;
     return `You win! Rock beats Scissors!`;
   }
-  if (playerSelection === "paper" && computerSelection === "rock") {
+  if (playerSelection === "Paper" && computerSelection === "Rock") {
     gameBoard.playerScore++;
     playerPoints.textContent = gameBoard.playerScore;
     return `You win! Paper beats Rock!`;
   }
-  if (playerSelection === "scissors" && computerSelection === "paper") {
+  if (playerSelection === "Scissors" && computerSelection === "Paper") {
     gameBoard.playerScore++;
     playerPoints.textContent = gameBoard.playerScore;
     return `You win! Scissors beats Paper!`;
   }
 
   // Player Loses
-  if (playerSelection === "scissors" && computerSelection === "rock") {
+  if (playerSelection === "Scissors" && computerSelection === "Rock") {
     gameBoard.computerScore++;
     computerPoints.textContent = gameBoard.computerScore;
     return `You Lose! Rock beats Scissors!`;
   }
-  if (playerSelection === "paper" && computerSelection === "scissors") {
+  if (playerSelection === "Paper" && computerSelection === "Scissors") {
     gameBoard.computerScore++;
     computerPoints.textContent = gameBoard.computerScore;
     return `You Lose! Scissors beats Paper!`;
   }
-  if (playerSelection === "rock" && computerSelection === "paper") {
+  if (playerSelection === "Rock" && computerSelection === "Paper") {
     gameBoard.computerScore++;
     computerPoints.textContent = gameBoard.computerScore;
     return `You Lose! Paper beats Rock!`;
@@ -105,4 +83,27 @@ function resetGame() {
       "";
 }
 
+playerButtonContainer.addEventListener("click", (e) => {
+  if (gameBoard.playerScore < 5 && gameBoard.computerScore < 5) {
+    let html = `<li><span>Round ${gameBoard.round}:</span> ${playRound(
+      e.target.name,
+      getComputerChoice(computerOptions)
+    )}</li>`;
+    gameBoard.round++;
+    results.insertAdjacentHTML("afterbegin", html);
+  }
+  if (gameBoard.playerScore === 5 || gameBoard.computerScore === 5) {
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
+    if (gameBoard.playerScore === 5) {
+      finalResult.textContent = `GAME OVER - You Win!!! 🏆`;
+    }
+    if (gameBoard.computerScore === 5) {
+      finalResult.textContent = `GAME OVER - You Lose!!! 💥`;
+    }
+  }
+  titleRound.textContent = `Round: ${gameBoard.round}`;
+  console.log(gameBoard.round);
+});
 reset.addEventListener("click", resetGame);
