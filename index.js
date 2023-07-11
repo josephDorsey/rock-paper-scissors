@@ -22,7 +22,7 @@ playerPoints.textContent = Number(gameBoard.playerScore);
 computerPoints.textContent = Number(gameBoard.computerScore);
 const computerOptions = ["rock", "paper", "scissors"];
 playerButtonContainer.addEventListener("click", (e) => {
-  if (gameBoard.round <= 5) {
+  if (gameBoard.playerScore < 5 && gameBoard.computerScore < 5) {
     let html = `<li>Round ${gameBoard.round}: ${playRound(
       e.target.name,
       getComputerChoice(computerOptions)
@@ -30,19 +30,15 @@ playerButtonContainer.addEventListener("click", (e) => {
     gameBoard.round++;
     results.insertAdjacentHTML("afterbegin", html);
   }
-  if (gameBoard.round > 5) {
-    gameBoard.round = 5;
+  if (gameBoard.playerScore === 5 || gameBoard.computerScore === 5) {
     rock.disabled = true;
     paper.disabled = true;
     scissors.disabled = true;
-    if (gameBoard.playerScore > gameBoard.computerScore) {
+    if (gameBoard.playerScore === 5) {
       finalResult.textContent = `GAMEOVER - You Win!!! 🏆`;
     }
-    if (gameBoard.computerScore > gameBoard.playerScore) {
+    if (gameBoard.computerScore === 5) {
       finalResult.textContent = `GAMEOVER - You Lose!!! 💥`;
-    }
-    if (gameBoard.computerScore === gameBoard.playerScore) {
-      finalResult.textContent = `GAMEOVER - ITS A TIE 🤡`;
     }
   }
   titleRound.textContent = `Round: ${gameBoard.round}`;
