@@ -20,6 +20,10 @@
         justify-content: space-evenly;
         margin-top: 2rem;
       }
+      .player-button-container > button {
+        border: 0;
+        background-color: transparent;
+      }
       .user-card {
         text-align: center;
         width: 75%;
@@ -43,6 +47,11 @@
         margin-top: 1rem;
         font-size: 1.3rem;
       }
+      .reset {
+        top: 10px;
+        right: 10px;
+        position: absolute;
+      }
     </style>
     <h1>Rock-Paper-Scissors</h1>
     <h2 class="title-round">Round: 1</h2>
@@ -51,9 +60,9 @@
         <h3>Player</h3>
         <p class="player-points"></p>
         <div class="player-button-container">
-          <button class="rock" name="rock">Rock 🪨</button>
-          <button class="paper" name="paper">Paper 📃</button>
-          <button class="scissors" name="scissors">Scissors ✂️</button>
+          <button class="rock" name="rock">🪨</button>
+          <button class="paper" name="paper">📃</button>
+          <button class="scissors" name="scissors">✂️</button>
         </div>
       </div>
       <div class="computer user-card">
@@ -70,6 +79,7 @@
       <h3 class="final-result"></h3>
       <ul class="round-results"></ul>
     </div>
+    <button class="reset">Reset</button>
 
     <script src="index.js"></script>
   </body>
