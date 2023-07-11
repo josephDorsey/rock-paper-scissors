@@ -19,23 +19,28 @@
       }
     </style>
     <h1>Rock-Paper-Scissors</h1>
+    <h2 class="title-round">Round: 1</h2>
     <div class="game-board">
       <div class="user-card">
         <h3>Player</h3>
+        <p class="player-points"></p>
         <div class="player-button-container">
-          <button name="rock">Rock 🪨</button>
-          <button name="paper">Paper 📃</button>
-          <button name="scissors">Scissors ✂️</button>
+          <button class="rock" name="rock">Rock 🪨</button>
+          <button class="paper" name="paper">Paper 📃</button>
+          <button class="scissors" name="scissors">Scissors ✂️</button>
         </div>
+        <p class="player-results"></p>
       </div>
       <div class="user-card">
         <h3>Computer</h3>
+        <p class="computer-points"></p>
         <div class="player-button-container">
           <p class="computer-results"></p>
         </div>
       </div>
     </div>
-    <p class="round-results"></p>
+    <h3 class="final-result"></h3>
+    <ul class="round-results"></ul>
     <script src="index.js"></script>
   </body>
 </html>
