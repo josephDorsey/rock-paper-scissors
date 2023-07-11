@@ -96,6 +96,7 @@ function resetGame() {
   playerPoints.textContent = gameBoard.playerScore = 0;
   computerPoints.textContent = gameBoard.computerScore = 0;
   gameBoard.round = 1;
+  titleRound.textContent = `Round: ${gameBoard.round}`;
   rock.disabled = paper.disabled = scissors.disabled = false;
   finalResult.textContent =
     results.innerHTML =
